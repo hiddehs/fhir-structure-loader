@@ -11,7 +11,7 @@ Adminstration endpoint FHIR StructureDefintion `shellscript` loader from Simplif
 ```bash
 # clone repo & make structureloader executable
 git clone https://github.com/hiddehs/fhir-structure-loader.git
-chmod +x structureloader.sh
+cd fhir-structure-loader && chmod +x structureloader.sh
 ```
 
 Download your Resources JSON zip from Simplifier and unpack it into the package directory.
