@@ -18,7 +18,7 @@ Download your Resources JSON zip from Simplifier and unpack it into the package 
 
 ## Usage
 ```bash
-./structureloader --url={administration_endpoint_url}
+./structureloader.sh --url={administration_endpoint_url}
 ```
 
 ## Arguments
