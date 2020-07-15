@@ -24,6 +24,6 @@ Download your Resources JSON zip from Simplifier and unpack it into the package 
 ## Arguments
 
 | Argument | Value |
-| -------- | ----- |
+| :------- | :---- |
 | `--url -u`   | `/Administration` endpoint url (default: `http://localhost:8080/Administration`) |
 | `--package -p`    | package directory that contains subdirectory with Simplifier Package extracted (default: `package`) |

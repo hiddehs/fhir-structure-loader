@@ -1,14 +1,14 @@
 #!/bin/bash
-endpoint="http://localhost:8080/Administration"
+endpoint="http://localhost/Administration"
 packageDirectory="package"
 definition_count=0
 
 function loadStructureDefintions() {
   echo "Loading StructureDefinitions in $1"
   for jsonFile in $1*.json; do
-    if [ "$(cat $jsonFile | ./jq-osx-amd64 '.resourceType')" = '"StructureDefinition"' ]; then
+    if [ "$(cat $jsonFile | jq '.resourceType')" = '"StructureDefinition"' ]; then
       definition_count=definition_count+1
-      id=$(cat $jsonFile | ./jq-osx-amd64 '.id' | sed 's/"//g')
+      id=$(cat $jsonFile | jq '.id' | sed 's/"//g')
       cmd="curl -sL -H \"Content-Type: application/json\" -X PUT --data  \"@$jsonFile\" -w '%{http_code}' $endpoint/StructureDefinition/$id -o /dev/null"
       statusCode=$(eval "$cmd")
       if [ $statusCode = "201" ] | [ $statusCode = "200" ]; then
