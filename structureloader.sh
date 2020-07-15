@@ -35,7 +35,7 @@ while [ $# -gt 0 ]; do
     exit 0
     ;;
   *)
-    printf >&2 "Error: Invalid argument\n"
+    printf >&2 "Error: Invalid argument\nUse arg --help to discover possible arguments\n"
     exit 1
     ;;
   esac
